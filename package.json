@@ -1,0 +1,24 @@
+{
+  "name": "mercado-livre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "dependencies": {
+    "cypress-project": "file:",
+    "express": "^4.17.1",
+    "mercado-livre": "file:"
+  },
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e/features"
+  }
+}

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+
+  cypress:
+    image: cypress/included:9.0.0
+    depends_on:
+      - web
+    working_dir: /e2e
+    volumes:
+      - .:/e2e
+    environment:
+      - CYPRESS_baseUrl=http://web:3000
+    command: ["cypress", "run"]
